@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { Router, Route, hashHistory, Link } from 'react-router';
 import FontAwesome from 'react-fontawesome'
 import './App.css';
 
@@ -17,9 +19,9 @@ class EngineInfo extends Component {
     return (
       <div className="engine-info">
         <label htmlFor="engine-ip-addr">Host:</label>
-        <input type="text" id="engine-ip-addr" defaultValue="10.4.2.70:8000"></input>
+        <input type="text" id="engine-ip-addr" defaultValue="192.168.10.32:8000"></input>
         <label htmlFor="engine-auth-token">API Token:</label>
-        <input type="text" id="engine-auth-token" defaultValue="93db21ad6f87e76b3bb0e6c5306cef11eeb43798"></input>
+        <input type="text" id="engine-auth-token" defaultValue=""></input>
       </div>
     );
   }
@@ -29,14 +31,8 @@ class EngineViewList extends Component {
   render() {
     return (
       <div className="engine-viewlist">
-        <button type="button" id="button-status" data-section="status" className="engine-view-button">Status</button>
-        <button type="button" id="button-captures" data-section="captures" className="engine-view-button">Captures</button>
-        <button type="button" id="button-capture-sessions" data-section="capture-sessions" className="engine-view-button">Capture Sessions</button>
-        <button type="button" id="button-files" data-section="files" className="engine-view-button">Files</button>
-        <button type="button" id="button-forensic-searches" data-section="forensic-searches" className="engine-view-button">Forensic Searches</button>
-        <button type="button" id="button-adapters" data-section="adapters" className="engine-view-button">Adapters</button>
-        <button type="button" id="button-filters" data-section="filters" className="engine-view-button">Filters</button>
-        <button type="button" id="button-graphs" data-section="graphs" className="engine-view-button">Graphs</button>
+        <Link to="/status/" className="engine-view-button" activeClassName="is-selected">Status</Link>
+        <Link to="/captures/" className="engine-view-button" activeClassName="is-selected">Captures</Link>
       </div>
     );
   }
@@ -62,15 +58,39 @@ class Sidebar extends Component {
   }
 }
 
+class EngineStatus extends Component {
+  render() {
+    return (
+      <div className="engine-view">Engine Status</div>
+    );
+  }
+}
+
+class EngineCaptures extends Component {
+  render() {
+    return (
+      <div className="engine-view">Engine Captures</div>
+    );
+  }
+}
+
 class App extends Component {
   render() {
     return (
       <div className="app">
         <Sidebar />
-        <EngineView />
+        {this.props.children}
       </div>
     );
   }
 }
+
+render((
+  <Router history={hashHistory}>
+    <Route path="/" component={App}>
+      <Route path="/status" component={EngineStatus} />
+      <Route path="/captures" component={EngineCaptures} />
+    </Route>
+  </Router>), document.getElementById("root"));
 
 export default App;

@@ -74,15 +74,20 @@ header {
     background-color: transparent;
     cursor: default;
     outline: none;
+    text-decoration: none;
 }
 
 .engine-view-button:hover,
 .engine-view-button:focus:not(.is-selected) {
     background-color: hsla(0,0%,0%,.1);
+    text-decoration: none;
+    color: inherit;
 }
 
 .engine-view-button.is-selected {
-    background-color: var(--color-accent);
+    background-color: #add6ff;
+    text-decoration: none;
+    color: inherit;
 }
 
 .engine-view-button.is-selected,
