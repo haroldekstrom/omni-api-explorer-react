@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './EngineInfo.css';
 
 class EngineInfo extends Component {
   render() {

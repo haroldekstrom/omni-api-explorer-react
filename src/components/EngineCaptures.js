@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './EngineCaptures.css';
 
 class EngineCaptures extends Component {
   render() {
