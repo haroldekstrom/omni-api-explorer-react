@@ -7,11 +7,11 @@ import './Sidebar.css';
 class Sidebar extends Component {
   render() {
     return (
-      <div className="sidebar">
+      <nav className="sidebar">
         <Header />
         <EngineInfo />
         <EngineNav />
-      </div>
+      </nav>
     );
   }
 }

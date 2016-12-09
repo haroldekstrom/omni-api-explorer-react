@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 
 import App from './components/App';
 import EngineStatus from './components/EngineStatus';
@@ -11,7 +11,7 @@ import 'font-awesome/css/font-awesome.css';
 import './index.css';
 
 render((
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path="/" component={App}>
       <Route path="/status" component={EngineStatus} />
       <Route path="/captures" component={EngineCaptures} />
