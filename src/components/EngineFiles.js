@@ -1,28 +1,27 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
-import './EngineStatus.css';
+import './EngineFiles.css';
 
-class EngineStatus extends Component {
+class EngineFiles extends Component {
   constructor(props) {
     super(props);
-    this.state = {engineStatus: {}};
+    this.state = {engineFiles: ""};
   }
 
   refresh() {
     const engineHost = document.getElementById('engine-ip-addr').value;
     const engineAuthToken = document.getElementById('engine-auth-token').value;
-    const url = 'http://' + engineHost + '/status/';
+    const url = 'http://' + engineHost + '/files/';
     const _this = this;
     fetch(url, {
       headers: {
-        "Authorization": "Token " + engineAuthToken,
-        "Accept": "application/json"
+        "Authorization": "Token " + engineAuthToken
       }
     })
     .then(function(response) {
       if (response.ok) {
-        response.json().then(function(json) {
-          _this.setState({engineStatus: json});
+        response.text().then(function(text) {
+          _this.setState({engineFiles: text});
         });
       }
     })
@@ -38,11 +37,11 @@ class EngineStatus extends Component {
   render() {
     return (
       <section className="engine-view">
-        <h1>Status</h1>
-        <pre>{JSON.stringify(this.state.engineStatus, null, 2)}</pre>
+        <h1>Files</h1>
+        <pre>{this.state.engineFiles}</pre>
       </section>
     );
   }
 }
 
-export default EngineStatus;
+export default EngineFiles;

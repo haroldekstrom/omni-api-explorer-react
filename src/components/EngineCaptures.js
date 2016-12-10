@@ -37,7 +37,7 @@ class EngineCaptures extends Component {
   render() {
     return (
       <section className="engine-view">
-        <h1 >Engine Captures</h1>
+        <h1>Captures</h1>
         <pre>{this.state.engineCaptures}</pre>
       </section>
     );
