@@ -5,7 +5,7 @@ import './EngineCaptureSessions.css';
 class EngineCaptureSessions extends Component {
     constructor(props) {
         super(props);
-        this.state = {engineCaptureSessions: ""};
+        this.state = {engineCaptureSessions: {}};
     }
 
     refresh() {
@@ -16,13 +16,13 @@ class EngineCaptureSessions extends Component {
         fetch(url, {
             headers: {
                 "Authorization": "Token " + engineAuthToken,
-                "Accept": "application/xml"
+                "Accept": "application/json"
             }
         })
         .then(function(response) {
             if (response.ok) {
-                response.text().then(function(text) {
-                    _this.setState({engineCaptureSessions: text});
+                response.json().then(function(json) {
+                    _this.setState({engineCaptureSessions: json});
                 });
             }
         })
@@ -46,43 +46,46 @@ class EngineCaptureSessions extends Component {
                 <div className="section-content">
                     <div className="capture-session-header">
                         <table className="prop-table">
-                            <tr>
-                                <th>Data start time:</th>
-                                <td>9/24/2014 10:59:58.545139100</td>
-                                <th>Media:</th>
-                                <td>Ethernet</td>
-                                <th>Adapter:</th>
-                                <td>Onboard Ethernet</td>
-                            </tr>
-                            <tr>
-                                <th>Data end time:</th>
-                                <td>9/24/2014 11:10:41.722926700</td>
-                                <th>Link speed:</th>
-                                <td>1,000 Mbits/s</td>
-                                <th>Owner:</th>
-                                <td>root</td>
-                            </tr>
-                            <tr>
-                                <th>Duration:</th>
-                                <td>0:10:43.177787600</td>
-                                <th>Packets:</th>
-                                <td>12,211</td>
-                                <th>Time window:</th>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>Status:</th>
-                                <td>Completed</td>
-                                <th>Packet dropped:</th>
-                                <td></td>
-                                <th>Sample interval:</th>
-                                <td>1 Sec. Avg.</td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <th>Data start time:</th>
+                                    <td>9/24/2014 10:59:58.545139100</td>
+                                    <th>Media:</th>
+                                    <td>Ethernet</td>
+                                    <th>Adapter:</th>
+                                    <td>Onboard Ethernet</td>
+                                </tr>
+                                <tr>
+                                    <th>Data end time:</th>
+                                    <td>9/24/2014 11:10:41.722926700</td>
+                                    <th>Link speed:</th>
+                                    <td>1,000 Mbits/s</td>
+                                    <th>Owner:</th>
+                                    <td>root</td>
+                                </tr>
+                                <tr>
+                                    <th>Duration:</th>
+                                    <td>0:10:43.177787600</td>
+                                    <th>Packets:</th>
+                                    <td>12,211</td>
+                                    <th>Time window:</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>Status:</th>
+                                    <td>Completed</td>
+                                    <th>Packet dropped:</th>
+                                    <td></td>
+                                    <th>Sample interval:</th>
+                                    <td>1 Sec. Avg.</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
 
                     <div className="capture-session-top-stats">
                         <div className="top-stats">
+                            <h3>Top Talkers by IP Address</h3>
                         </div>
                         <div className="top-stats">
                             <h3>Top Protocols by Bytes</h3>

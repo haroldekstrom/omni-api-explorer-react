@@ -5,7 +5,7 @@ import './EngineFiles.css';
 class EngineFiles extends Component {
     constructor(props) {
         super(props);
-        this.state = {engineFiles: ""};
+        this.state = {engineFiles: {}};
     }
 
     refresh() {
@@ -16,13 +16,13 @@ class EngineFiles extends Component {
         fetch(url, {
             headers: {
                 "Authorization": "Token " + engineAuthToken,
-                "Accept": "application/xml"
+                "Accept": "application/json"
             }
         })
         .then(function(response) {
             if (response.ok) {
-                response.text().then(function(text) {
-                    _this.setState({engineFiles: text});
+                response.json().then(function(json) {
+                    _this.setState({engineFiles: json});
                 });
             }
         })
@@ -39,7 +39,7 @@ class EngineFiles extends Component {
         return (
             <section className="engine-view engine-files">
                 <h1>Files</h1>
-                <pre>{this.state.engineFiles}</pre>
+                <pre>{JSON.stringify(this.state.engineFiles, null, 2)}</pre>
             </section>
         );
     }

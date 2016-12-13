@@ -1,4 +1,3 @@
-
 .engine-view-button {
     display: block;
     width: 100%;
@@ -40,6 +39,6 @@
 .engine-view-button em {
     font-style: normal;
     font-weight: 600;
-    color: var(--color-strong);
+    color: hsl(0,0%,11%);
     pointer-events: none; /* makes it invisible to clicks */
 }
