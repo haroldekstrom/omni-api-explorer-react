@@ -1,45 +1,45 @@
 
 .engine-view-button {
-  display: block;
-  width: 100%;
-  padding: .3rem;
-  padding-left: 1rem;
-  line-height: 2;
-  text-align: left;
-  font: inherit;
-  color: inherit;
-  border: none;
-  background-color: transparent;
-  cursor: default;
-  outline: none;
-  text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: .3rem;
+    padding-left: 1rem;
+    line-height: 2;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    border: none;
+    background-color: transparent;
+    cursor: default;
+    outline: none;
+    text-decoration: none;
 }
 
 .engine-view-button:hover,
 .engine-view-button:focus:not(.is-selected) {
-  background-color: hsla(0,0%,0%,.1);
-  text-decoration: none;
-  color: inherit;
+    background-color: hsla(0,0%,0%,.1);
+    text-decoration: none;
+    color: inherit;
 }
 
 .engine-view-button.is-selected {
-  background-color: #add6ff;
-  text-decoration: none;
-  color: inherit;
+    background-color: #add6ff;
+    text-decoration: none;
+    color: inherit;
 }
 
 .engine-view-button.is-selected,
 .engine-view-button.is-selected em {
-  color: #333;
+    color: #333;
 }
 
 .engine-view-button.is-selected:focus {
-  opacity: .8;
+    opacity: .8;
 }
 
 .engine-view-button em {
-  font-style: normal;
-  font-weight: 600;
-  color: var(--color-strong);
-  pointer-events: none; /* makes it invisible to clicks */
+    font-style: normal;
+    font-weight: 600;
+    color: var(--color-strong);
+    pointer-events: none; /* makes it invisible to clicks */
 }

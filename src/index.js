@@ -20,18 +20,18 @@ import 'font-awesome/css/font-awesome.css';
 import './index.css';
 
 render((
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <Route path="/status/" component={EngineStatus} />
-      <Route path="/captures/" component={EngineCaptures} />
-      <Route path="/capture-sessions/" component={EngineCaptureSessions} />
-      <Route path="/files/" component={EngineFiles} />
-      <Route path="/forensic-searches/" component={EngineForensicSearches} />
-      <Route path="/adapters/" component={EngineAdapters} />
-      <Route path="/events/" component={EngineEvents} />
-      <Route path="/filters/" component={EngineFilters} />
-      <Route path="/graphs/" component={EngineGraphs} />
-      <Route path="/alarms/" component={EngineAlarms} />
-      <Route path="/notifications/" component={EngineNotifications} />
-    </Route>
-  </Router>), document.getElementById("root"));
+    <Router history={browserHistory}>
+        <Route path="/" component={App}>
+            <Route path="/status/" component={EngineStatus} />
+            <Route path="/captures/" component={EngineCaptures} />
+            <Route path="/capture-sessions/" component={EngineCaptureSessions} />
+            <Route path="/files/" component={EngineFiles} />
+            <Route path="/forensic-searches/" component={EngineForensicSearches} />
+            <Route path="/adapters/" component={EngineAdapters} />
+            <Route path="/events/" component={EngineEvents} />
+            <Route path="/filters/" component={EngineFilters} />
+            <Route path="/graphs/" component={EngineGraphs} />
+            <Route path="/alarms/" component={EngineAlarms} />
+            <Route path="/notifications/" component={EngineNotifications} />
+        </Route>
+    </Router>), document.getElementById("root"));
