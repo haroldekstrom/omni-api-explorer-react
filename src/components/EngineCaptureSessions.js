@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import 'whatwg-fetch';
 import './EngineCaptureSessions.css';
 
@@ -37,7 +38,14 @@ class EngineCaptureSessions extends Component {
 
     render() {
         return (
-            <section className="engine-view engine-capture-sessions">
+            <ReactCSSTransitionGroup
+                transitionName="section"
+                transitionAppear={true}
+                transitionAppearTimeout={500}
+                transitionEnter={false}
+                transitionLeave={false}
+                component="section"
+                className="engine-view engine-capture-sessions">
                 {/*<pre>{this.state.engineCaptureSessions}</pre>*/}
                 <nav className="section-nav">
                     <header><h1>Capture Sessions</h1></header>
@@ -110,7 +118,7 @@ class EngineCaptureSessions extends Component {
                         </div>
                     </div>
                 </div>
-            </section>
+            </ReactCSSTransitionGroup>
         );
     }
 }

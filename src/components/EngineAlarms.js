@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import 'whatwg-fetch';
 import './EngineAlarms.css';
 
@@ -37,10 +38,17 @@ class EngineAlarms extends Component {
 
     render() {
         return (
-            <section className="engine-view engine-alarms">
+            <ReactCSSTransitionGroup
+                transitionName="section"
+                transitionAppear={true}
+                transitionAppearTimeout={500}
+                transitionEnter={false}
+                transitionLeave={false}
+                component="section"
+                className="engine-view engine-alarms">
                 <h1>Alarms</h1>
                 <pre>{this.state.engineAlarms}</pre>
-            </section>
+            </ReactCSSTransitionGroup>
         );
     }
 }

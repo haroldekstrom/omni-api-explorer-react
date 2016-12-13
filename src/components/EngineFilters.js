@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import 'whatwg-fetch';
 import './EngineFilters.css';
 
@@ -36,10 +37,17 @@ class EngineFilters extends Component {
 
     render() {
         return (
-            <section className="engine-view engine-filters">
+            <ReactCSSTransitionGroup
+                transitionName="section"
+                transitionAppear={true}
+                transitionAppearTimeout={500}
+                transitionEnter={false}
+                transitionLeave={false}
+                component="section"
+                className="engine-view engine-filters">
                 <h1>Filters</h1>
                 <pre>{this.state.engineFilters}</pre>
-            </section>
+            </ReactCSSTransitionGroup>
         );
     }
 }

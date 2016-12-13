@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import 'whatwg-fetch';
 import { getMediaString } from './../utils'
 import './EngineAdapters.css';
@@ -120,10 +121,17 @@ class EngineAdapters extends Component {
     render() {
         if (this.state.engineAdapters.length > 0) {
             return (
-                <section className="engine-view engine-adapters">
+                <ReactCSSTransitionGroup
+                    transitionName="section"
+                    transitionAppear={true}
+                    transitionAppearTimeout={500}
+                    transitionEnter={false}
+                    transitionLeave={false}
+                    component="section"
+                    className="engine-view engine-adapters">
                     <h1>Adapters</h1>
                     <EngineAdaptersList props={this.state.engineAdapters} />
-                </section>
+                </ReactCSSTransitionGroup>
             );
         } else {
             return <div></div>;

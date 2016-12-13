@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import 'whatwg-fetch';
 import './EngineStatus.css';
 
@@ -38,7 +39,14 @@ class EngineStatus extends Component {
     render() {
         const props = this.state.engineStatus;
         return (
-            <section className="engine-view engine-status">
+            <ReactCSSTransitionGroup
+                transitionName="section"
+                transitionAppear={true}
+                transitionAppearTimeout={500}
+                transitionEnter={false}
+                transitionLeave={false}
+                component="section"
+                className="engine-view engine-status">
                 <h1>Status</h1>
                 {/*<pre>{JSON.stringify(this.state.engineStatus, null, 2)}</pre>*/}
                 <table className="prop-table">
@@ -57,7 +65,7 @@ class EngineStatus extends Component {
                         <tr><th>Data Folder</th><td>{props.DataFolder}</td></tr>
                     </tbody>
                 </table>
-            </section>
+            </ReactCSSTransitionGroup>
         );
     }
 }

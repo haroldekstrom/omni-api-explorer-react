@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import 'whatwg-fetch';
 import './EngineForensicSearches.css';
 
@@ -36,10 +37,17 @@ class EngineForensicSearches extends Component {
 
     render() {
         return (
-            <section className="engine-view engine-forensic-searches">
+            <ReactCSSTransitionGroup
+                transitionName="section"
+                transitionAppear={true}
+                transitionAppearTimeout={500}
+                transitionEnter={false}
+                transitionLeave={false}
+                component="section"
+                className="engine-view engine-forensic-searches">
                 <h1>Forensic Searches</h1>
                 <pre>{this.state.engineForensicSearches}</pre>
-            </section>
+            </ReactCSSTransitionGroup>
         );
     }
 }
