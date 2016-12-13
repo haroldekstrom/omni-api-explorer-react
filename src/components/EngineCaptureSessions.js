@@ -6,7 +6,7 @@ import './EngineCaptureSessions.css';
 class EngineCaptureSessions extends Component {
     constructor(props) {
         super(props);
-        this.state = {engineCaptureSessions: {}};
+        this.state = {engineCaptureSessions: {"cols": [], "rows": []}};
     }
 
     refresh() {
@@ -46,10 +46,14 @@ class EngineCaptureSessions extends Component {
                 transitionLeave={false}
                 component="section"
                 className="engine-view engine-capture-sessions">
-                {/*<pre>{this.state.engineCaptureSessions}</pre>*/}
+                {/*<pre>{JSON.stringify(this.state.engineCaptureSessions, null, 2)}</pre>*/}
                 <nav className="section-nav">
                     <header><h1>Capture Sessions</h1></header>
-                    <div className="nav-item"></div>
+                    {
+                        this.state.engineCaptureSessions.rows.map(function(row) {
+                            return (<button type="button"data-session-id={row.SessionID}>{row.Name}</button>);
+                        })
+                    }
                 </nav>
                 <div className="section-content">
                     <div className="capture-session-header">

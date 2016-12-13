@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import FontAwesome from 'react-fontawesome'
 import 'whatwg-fetch';
 import './EngineFiles.css';
 
 class EngineFiles extends Component {
     constructor(props) {
         super(props);
-        this.state = {engineFiles: {}};
+        this.state = {engineFiles: {"cols": [], "rows": []}};
     }
 
     refresh() {
@@ -47,7 +48,14 @@ class EngineFiles extends Component {
                 component="section"
                 className="engine-view engine-files">
                 <h1>Files</h1>
-                <pre>{JSON.stringify(this.state.engineFiles, null, 2)}</pre>
+                {/*<pre>{JSON.stringify(this.state.engineFiles, null, 2)}</pre>*/}
+                <div>
+                {
+                    this.state.engineFiles.rows.map(function(row) {
+                        return (<div><FontAwesome name="file"/> {row.FileName}</div>);
+                    })
+                }
+                </div>
             </ReactCSSTransitionGroup>
         );
     }

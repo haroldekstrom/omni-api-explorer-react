@@ -47,6 +47,39 @@
     margin: 0;
 }
 
+.section-nav button {
+    display: block;
+    width: 100%;
+    padding: .3rem;
+    padding-left: 1rem;
+    line-height: 2;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    border: none;
+    background-color: transparent;
+    cursor: default;
+    outline: none;
+}
+
+.section-nav button:hover,
+.section-nav button:focus:not(.is-selected) {
+    background-color: hsla(0,0%,0%,.1);
+}
+
+.section-nav button.is-selected {
+    background-color: var(--color-accent);
+}
+
+.section-nav button.is-selected,
+.section-nav button.is-selected em {
+    color: #333;
+}
+
+.nav-button.is-selected:focus {
+    opacity: .8;
+}
+
 .section-content {
     flex: 1;
     display: flex;
