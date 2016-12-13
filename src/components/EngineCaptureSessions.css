@@ -1,0 +1,41 @@
+.engine-capture-sessions {
+    display: flex;
+    flex-direction: row;
+}
+
+.capture-session-header {
+    background-color: #ebebeb;
+    padding: 1em;
+}
+
+.capture-session-top-stats {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    background-color: #fcfcfd;
+    border-bottom: 3px solid #ebebeb;
+    min-height: 200px;
+}
+
+.capture-session-top-stats .top-stats {
+    flex: 1;
+}
+
+.capture-session-timeline-stats {
+    flex: 1;
+    background-color: #fcfcfd;
+    border-bottom: 3px solid #ebebeb;
+    min-height: 200px;
+}
+
+.capture-session-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em;
+    min-height: 200px;
+}
+
+.capture-session-list .tab-content {
+    flex: 1;
+}

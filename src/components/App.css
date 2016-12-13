@@ -8,6 +8,90 @@
 
 .engine-view {
   flex: 1;
-  padding: 1em;
   overflow: auto;
+}
+
+.prop-table th {
+  text-align: right;
+  padding-right: 1em;
+}
+
+.section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1em;
+
+  /* Hide */
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: visibility 0s .12s linear , opacity .12s ease-in, transform .12s ease-in;
+}
+
+.section.is-shown {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+  transition: visibility 0s 0s linear , opacity .36s ease-out, transform .36s ease-out;
+}
+
+.section h3,
+.section p {
+  color: var(--color);
+}
+
+.section-wrapper {
+  position: relative;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 2rem 2rem 1rem 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-icon {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: .5em;
+}
+
+.section-nav {
+  min-width: 250px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid hsl(0,0%,88%);
+  background-color: white;
+}
+
+.section-nav header {
+  padding: 1em;
+}
+
+.section-nav header h1 {
+  line-height: 1;
+  margin: 0;
+}
+
+.section-content {
+  flex: 1;
+  padding-top: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-content .tab-content {
+  flex: 1;
+  overflow: auto;
+}
+
+.section-content .tab-pane {
+  white-space: pre;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1em;
 }

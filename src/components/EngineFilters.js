@@ -36,7 +36,7 @@ class EngineFilters extends Component {
 
   render() {
     return (
-      <section className="engine-view">
+      <section className="engine-view engine-filters">
         <h1>Filters</h1>
         <pre>{this.state.engineFilters}</pre>
       </section>

@@ -36,7 +36,7 @@ class EngineGraphs extends Component {
 
   render() {
     return (
-      <section className="engine-view">
+      <section className="engine-view engine-graphs">
         <h1>Graphs</h1>
         <pre>{this.state.engineGraphs}</pre>
       </section>

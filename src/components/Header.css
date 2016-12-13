@@ -1,10 +1,9 @@
-header {
-  position: relative;
+.header {
   padding: 2rem 1rem;
   background-color: #2865b0;
 }
 
-.header-title {
+.header h1 {
   text-transform: uppercase;
   text-align: center;
   font-family: "Raleway";

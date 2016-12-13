@@ -1,0 +1,4 @@
+.engine-captures {
+    display: flex;
+    flex-direction: row;
+}

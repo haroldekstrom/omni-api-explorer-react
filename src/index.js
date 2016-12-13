@@ -8,9 +8,11 @@ import EngineCaptures from './components/EngineCaptures';
 import EngineCaptureSessions from './components/EngineCaptureSessions';
 import EngineFiles from './components/EngineFiles';
 import EngineForensicSearches from './components/EngineForensicSearches';
+import EngineEvents from './components/EngineEvents';
 import EngineAdapters from './components/EngineAdapters';
 import EngineFilters from './components/EngineFilters';
 import EngineGraphs from './components/EngineGraphs';
+import EngineAlarms from './components/EngineAlarms';
 import EngineNotifications from './components/EngineNotifications';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -26,8 +28,10 @@ render((
       <Route path="/files/" component={EngineFiles} />
       <Route path="/forensic-searches/" component={EngineForensicSearches} />
       <Route path="/adapters/" component={EngineAdapters} />
+      <Route path="/events/" component={EngineEvents} />
       <Route path="/filters/" component={EngineFilters} />
       <Route path="/graphs/" component={EngineGraphs} />
+      <Route path="/alarms/" component={EngineAlarms} />
       <Route path="/notifications/" component={EngineNotifications} />
     </Route>
   </Router>), document.getElementById("root"));

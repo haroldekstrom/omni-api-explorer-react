@@ -36,9 +36,26 @@ class EngineCaptures extends Component {
 
   render() {
     return (
-      <section className="engine-view">
-        <h1>Captures</h1>
-        <pre>{this.state.engineCaptures}</pre>
+      <section className="engine-view engine-captures">
+        {/*<pre>{this.state.engineCaptures}</pre>*/}
+        <nav className="section-nav">
+            <header><h1>Captures</h1></header>
+            <div className="nav-item"></div>
+        </nav>
+        <div className="section-content">
+            <ul className="nav nav-tabs" role="tablist">
+                <li role="presentation" className="active"><a href="#capture-nodes" aria-controls="nodes" role="tab" data-toggle="tab">Nodes</a></li>
+                <li role="presentation"><a href="#capture-protocols" aria-controls="protocols" role="tab" data-toggle="tab">Protocols</a></li>
+                <li role="presentation"><a href="#capture-applications" aria-controls="applications" role="tab" data-toggle="tab">Applications</a></li>
+                <li role="presentation"><a href="#capture-flows" aria-controls="flows" role="tab" data-toggle="tab">Flows</a></li>
+            </ul>
+            <div className="tab-content">
+                <div role="tabpanel" className="tab-pane active" id="capture-nodes"></div>
+                <div role="tabpanel" className="tab-pane" id="capture-protocols"></div>
+                <div role="tabpanel" className="tab-pane" id="capture-applications"></div>
+                <div role="tabpanel" className="tab-pane" id="capture-flows"></div>
+            </div>
+        </div>
       </section>
     );
   }

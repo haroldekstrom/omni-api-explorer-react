@@ -37,7 +37,7 @@ class EngineNotifications extends Component {
 
   render() {
     return (
-      <section className="engine-view">
+      <section className="engine-view engine-notifications">
         <h1>Notifications</h1>
         <pre>{JSON.stringify(this.state.engineNotifications, null, 2)}</pre>
       </section>

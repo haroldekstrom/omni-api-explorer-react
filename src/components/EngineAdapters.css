@@ -1,0 +1,15 @@
+.engine-adapters {
+  padding: 1em;    
+}
+
+.adapter-item {
+    margin-bottom: 1em;
+}
+
+.adapter-item h2 {
+    margin: 0;
+}
+
+.adapter-item table {
+    margin-left: 1em;
+}

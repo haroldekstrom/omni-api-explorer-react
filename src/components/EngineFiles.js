@@ -15,7 +15,8 @@ class EngineFiles extends Component {
     const _this = this;
     fetch(url, {
       headers: {
-        "Authorization": "Token " + engineAuthToken
+        "Authorization": "Token " + engineAuthToken,
+        "Accept": "application/xml"
       }
     })
     .then(function(response) {
@@ -36,7 +37,7 @@ class EngineFiles extends Component {
 
   render() {
     return (
-      <section className="engine-view">
+      <section className="engine-view engine-files">
         <h1>Files</h1>
         <pre>{this.state.engineFiles}</pre>
       </section>
