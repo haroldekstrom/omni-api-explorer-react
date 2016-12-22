@@ -9,23 +9,22 @@
 }
 
 .capture-session-top-stats {
-    flex: 1;
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
     background-color: #fcfcfd;
     border-bottom: 3px solid #ebebeb;
-    min-height: 200px;
+    height: 223px;
 }
 
 .capture-session-top-stats .top-stats {
-    flex: 1;
+    flex: 1 0 auto;
+    width: 50%;
 }
 
 .capture-session-timeline-stats {
-    flex: 1;
     background-color: #fcfcfd;
     border-bottom: 3px solid #ebebeb;
-    min-height: 200px;
+    height: 223px;
 }
 
 .capture-session-list {
@@ -33,7 +32,7 @@
     display: flex;
     flex-direction: column;
     padding-top: 1em;
-    min-height: 200px;
+    min-height: 223px;
 }
 
 .capture-session-list .tab-content {

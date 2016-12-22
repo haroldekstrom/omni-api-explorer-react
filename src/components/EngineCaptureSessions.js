@@ -1,7 +1,54 @@
 import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import 'whatwg-fetch';
+import ReactHighcharts from 'react-highcharts'
 import './EngineCaptureSessions.css';
+
+const topChartConfig = {
+  chart: {
+    type: "bar",
+    height: 220
+  },
+  title: {
+    text: "Top Talkers by IP Address"
+  },
+  legend: {
+    enabled: false
+  },
+  yAxis: {
+    title: {
+      text: null
+    }
+  },
+  series: [
+    {
+      color: "#de6a10",
+      data: [310, 295, 290, 240, 220, 210, 195, 180, 170, 150, 140, 125, 110, 100, 90, 80, 55]
+    }
+  ]
+}
+
+const timelineChartConfig = {
+  chart: {
+    height: 220
+  },
+  title: {
+    text: null
+  },
+  legend: {
+    enabled: false
+  },
+  yAxis: {
+    title: {
+      text: "Mbits/s"
+    }
+  },
+  series: [
+    {
+      data: [310, 295, 290, 240, 220, 210, 195, 180, 170, 150, 140, 125, 110, 100, 90, 80, 55]
+    }
+  ]
+}
 
 class EngineCaptureSessions extends Component {
     constructor(props) {
@@ -51,7 +98,7 @@ class EngineCaptureSessions extends Component {
                     <header><h1>Capture Sessions</h1></header>
                     {
                         this.state.engineCaptureSessions.rows.map(function(row) {
-                            return (<button type="button"data-session-id={row.SessionID}>{row.Name}</button>);
+                            return (<button type="button" key={row.SessionID} data-session-id={row.SessionID}>{row.Name}</button>);
                         })
                     }
                 </nav>
@@ -86,7 +133,7 @@ class EngineCaptureSessions extends Component {
                                 <tr>
                                     <th>Status:</th>
                                     <td>Completed</td>
-                                    <th>Packet dropped:</th>
+                                    <th>Packets dropped:</th>
                                     <td></td>
                                     <th>Sample interval:</th>
                                     <td>1 Sec. Avg.</td>
@@ -97,15 +144,20 @@ class EngineCaptureSessions extends Component {
 
                     <div className="capture-session-top-stats">
                         <div className="top-stats">
-                            <h3>Top Talkers by IP Address</h3>
+                            <div>
+                                <ReactHighcharts config={topChartConfig} />
+                            </div>
                         </div>
                         <div className="top-stats">
-                            <h3>Top Protocols by Bytes</h3>
+                            <div>
+                                <ReactHighcharts config={topChartConfig} />
+                            </div>
                         </div>
                     </div>
 
                     <div className="capture-session-timeline-stats">
                         <div className="capture-sessions-timeline-graph">
+                            <ReactHighcharts config={timelineChartConfig} />
                         </div>
                     </div>
 
